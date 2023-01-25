@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styled from "styled-components";
+import CssBaseline from "@mui/material/CssBaseline";
 import Map from "./components/Map";
 import Nav from "./components/Nav";
 import Home from "./router/Home";
@@ -32,6 +33,7 @@ const ControlContainer = styled.div`
 function App() {
   return (
     <BrowserRouter>
+      <CssBaseline />
       <Container>
         <Map />
         <ControlContainer>
