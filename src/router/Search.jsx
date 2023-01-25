@@ -1,4 +1,4 @@
 function Search() {
-  return <div>search</div>;
+  return <div></div>;
 }
 export default Search;

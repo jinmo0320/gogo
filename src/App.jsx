@@ -9,33 +9,40 @@ import Me from "./router/Me";
 
 const Container = styled.div`
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: grid;
+  grid-template-columns: 16rem 1fr;
+
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+
+  overflow: hidden;
 `;
 
 const ControlContainer = styled.div`
-  position: absolute;
-  z-index: 1;
-  top: 10%;
-  left: 3rem;
   display: grid;
   grid-template-rows: 3rem 1fr;
 
   background-color: white;
-  box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.2);
-  width: 15rem;
-  height: 80%;
-  border-radius: 10px;
+  width: 16rem;
+  height: 100%;
+  border-right: 2px solid rgba(0, 0, 0, 0.1);
 
   overflow: hidden;
 `;
+const MapContainer = styled.div``;
 
 function App() {
   return (
     <BrowserRouter>
       <CssBaseline />
       <Container>
-        <Map />
         <ControlContainer>
           <Nav />
           <Routes>
@@ -44,6 +51,9 @@ function App() {
             <Route path="/me" element={<Me />} />
           </Routes>
         </ControlContainer>
+        <MapContainer>
+          <Map />
+        </MapContainer>
       </Container>
     </BrowserRouter>
   );
