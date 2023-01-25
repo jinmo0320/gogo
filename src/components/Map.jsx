@@ -45,8 +45,8 @@ function Map() {
 
   return (
     <>
-      <div ref={container} style={{ width: "500px", height: "400px" }} />
-      <button onClick={() => displayMarker(coords, "You are here")}>Pin</button>
+      <div ref={container} style={{ width: "100%", height: "100%" }} />
+      {/* <button onClick={() => displayMarker(coords, "You are here")}>Pin</button> */}
     </>
   );
 }
