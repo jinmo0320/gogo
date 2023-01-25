@@ -33,7 +33,6 @@ function Map() {
     const position = new kakao.maps.LatLng(...coords);
     const marker = new kakao.maps.Marker({ map, position });
 
-    // 인포윈도우를 생성합니다
     const infowindow = new kakao.maps.InfoWindow({
       content,
       removable: true,
@@ -41,7 +40,6 @@ function Map() {
 
     // 인포윈도우를 마커위에 표시합니다
     infowindow.open(map, marker);
-
     map.setCenter(position);
   }
 
