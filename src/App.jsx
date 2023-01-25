@@ -18,13 +18,15 @@ const ControlContainer = styled.div`
   top: 10%;
   left: 3rem;
   display: grid;
-  grid-template-rows: 2rem 1fr;
+  grid-template-rows: 3rem 1fr;
 
   background-color: white;
   box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.2);
   width: 15rem;
   height: 80%;
   border-radius: 10px;
+
+  overflow: hidden;
 `;
 
 function App() {
