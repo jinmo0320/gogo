@@ -18,9 +18,9 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 16rem 1fr;
 
-  border: 2px solid rgba(0, 0, 0, 0.1);
+  border: 2px solid #c4c4c4;
   border-radius: 15px;
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
 
   overflow: hidden;
 `;
@@ -32,7 +32,7 @@ const ControlContainer = styled.div`
   background-color: white;
   width: 16rem;
   height: 100%;
-  border-right: 2px solid rgba(0, 0, 0, 0.1);
+  border-right: 2px solid #c4c4c4;
 
   overflow: hidden;
 `;

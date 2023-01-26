@@ -9,31 +9,27 @@ const NavContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   text-align: center;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  border-bottom: 2px solid #c4c4c4;
   padding: 0.9rem 3rem 0.9rem 3rem;
   gap: 2rem;
 `;
+
+const sx = {
+  color: "rgba(0,0,0,0.5)",
+  fontSize: "1.2rem",
+};
 
 function Nav() {
   return (
     <NavContainer>
       <Link to={"/"}>
-        <SvgIcon
-          component={HomeRoundedIcon}
-          sx={{ color: "rgba(0,0,0,0.5)", fontSize: "1.2rem" }}
-        />
+        <SvgIcon component={HomeRoundedIcon} sx={sx} />
       </Link>
       <Link to={"/search"}>
-        <SvgIcon
-          component={SearchIcon}
-          sx={{ color: "rgba(0,0,0,0.5)", fontSize: "1.2rem" }}
-        />
+        <SvgIcon component={SearchIcon} sx={sx} />
       </Link>
       <Link to={"/me"}>
-        <SvgIcon
-          component={PersonIcon}
-          sx={{ color: "rgba(0,0,0,0.5)", fontSize: "1.2rem" }}
-        />
+        <SvgIcon component={PersonIcon} sx={sx} />
       </Link>
     </NavContainer>
   );
