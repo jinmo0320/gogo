@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import SvgIcon from "@mui/material/SvgIcon";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import SearchIcon from "@mui/icons-material/Search";
