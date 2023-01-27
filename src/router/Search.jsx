@@ -6,12 +6,13 @@ const SearchContainer = styled.div`
   display: flex;
   align-items: center;
   padding-left: 1rem;
+  padding-right: 1rem;
 `;
 const SearchBar = styled.input`
   border: none;
   border-radius: 0.7rem;
   background-color: #e3e3e3;
-  width: 14rem;
+  width: 100%;
   padding: 0.4rem;
   padding-left: 2rem;
   font-size: 0.8rem;
