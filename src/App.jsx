@@ -11,14 +11,14 @@ import Me from "./router/Me";
 
 const Container = styled.div`
   position: absolute;
-  width: 90%;
-  height: 90%;
+  width: 95%;
+  height: 95%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
   display: grid;
-  grid-template-columns: 20rem 1fr;
+  grid-template-columns: auto 1fr;
 
   border: 2px solid #c4c4c4;
   border-radius: 15px;
@@ -48,13 +48,13 @@ const CreateBtn = styled.button`
   margin: 1rem;
   width: 4rem;
   height: 4rem;
-  border: 2px solid #74b9ff;
+  border: none;
   border-radius: 100px;
-  background-color: white;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  background-color: #74b9ff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
 `;
 const sx = {
-  color: "#0984e3",
+  color: "white",
   fontSize: "2rem",
 };
 
