@@ -1,3 +1,4 @@
+import { useState, useEffect, useId } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styled from "styled-components";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -59,6 +60,24 @@ const sx = {
 };
 
 function App() {
+  const id = useId();
+
+  function handleClick() {
+    fetch("http://localhost:3000/", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        id,
+        title: "지세포 굴구이",
+        coords: { lat: 34.82890487884411, lng: 128.70277809518603 },
+        diary: "지세포 굴구이 굴구이 지세포 세포 굴구이 지세포 굴구이",
+        authorId: "asdfasdf",
+      }),
+    })
+      .then((res) => res.json())
+      .then(console.log);
+  }
+
   return (
     <BrowserRouter>
       <CssBaseline />
@@ -70,7 +89,7 @@ function App() {
             <Route path="/search" element={<Search />} />
             <Route path="/me" element={<Me />} />
           </Routes>
-          <CreateBtn>
+          <CreateBtn onClick={handleClick}>
             <SvgIcon component={DriveFileRenameOutlineRoundedIcon} sx={sx} />
           </CreateBtn>
         </ControlContainer>
