@@ -62,7 +62,7 @@ const sx = {
 };
 
 function App() {
-  const { markers, createMarker } = useMarkers();
+  const { markers, createMarker } = useMarkers("developing");
 
   function handleClick() {
     const newMarker = {
