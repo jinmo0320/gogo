@@ -28,7 +28,7 @@ function App() {
     <BrowserRouter>
       <CssBaseline />
       <Container>
-        <Map />
+        <Map markers={markers} />
       </Container>
     </BrowserRouter>
   );
