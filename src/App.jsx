@@ -1,4 +1,3 @@
-import { useState, useEffect, useId } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styled from "styled-components";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -9,6 +8,8 @@ import Nav from "./components/Nav";
 import Home from "./router/Home";
 import Search from "./router/Search";
 import Me from "./router/Me";
+
+import { useMarkers } from "./hooks/useMarkers";
 
 const Container = styled.div`
   position: absolute;
@@ -54,28 +55,23 @@ const CreateBtn = styled.button`
   background-color: #74b9ff;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
 `;
+
 const sx = {
   color: "white",
   fontSize: "2rem",
 };
 
 function App() {
-  const id = useId();
+  const { markers, createMarker } = useMarkers();
 
   function handleClick() {
-    fetch("http://localhost:3000/", {
-      method: "post",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        id,
-        title: "지세포 굴구이",
-        coords: { lat: 34.82890487884411, lng: 128.70277809518603 },
-        diary: "지세포 굴구이 굴구이 지세포 세포 굴구이 지세포 굴구이",
-        authorId: "asdfasdf",
-      }),
-    })
-      .then((res) => res.json())
-      .then(console.log);
+    const newMarker = {
+      title: "지세포 굴구이",
+      coords: { lat: 34.82890487884411, lng: 128.70277809518603 },
+      diary: "지세포 굴구이 굴구이 지세포 세포 굴구이 지세포 굴구이",
+      authorId: "asdfasdf",
+    };
+    createMarker(newMarker);
   }
 
   return (
@@ -94,7 +90,7 @@ function App() {
           </CreateBtn>
         </ControlContainer>
         <MapContainer>
-          <Map />
+          <Map markers={markers} />
         </MapContainer>
       </Container>
     </BrowserRouter>
