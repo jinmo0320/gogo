@@ -12,17 +12,7 @@ const Container = styled.div`
 `;
 
 function App() {
-  const { markers, createMarker } = useMarkers("developing");
-
-  function handleClick() {
-    const newMarker = {
-      title: "지세포 굴구이",
-      coords: { lat: 34.82890487884411, lng: 128.70277809518603 },
-      diary: "지세포 굴구이 굴구이 지세포 세포 굴구이 지세포 굴구이",
-      authorId: "asdfasdf",
-    };
-    createMarker(newMarker);
-  }
+  const { markers } = useMarkers("developing");
 
   return (
     <BrowserRouter>
