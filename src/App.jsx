@@ -1,7 +1,8 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import styled from "styled-components";
 import CssBaseline from "@mui/material/CssBaseline";
 import Map from "./components/Map";
+import Temp from "./components/Temp";
 
 import { useMarkers } from "./hooks/useMarkers";
 
@@ -20,6 +21,7 @@ function App() {
       <Container>
         <Map markers={markers} />
       </Container>
+      <Temp />
     </BrowserRouter>
   );
 }
