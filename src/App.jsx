@@ -1,28 +1,23 @@
-import { BrowserRouter } from "react-router-dom";
-import styled from "styled-components";
+import { Route, Routes } from "react-router-dom";
 import CssBaseline from "@mui/material/CssBaseline";
-import Map from "./components/Map";
+import MapContainer from "./components/MapContainer";
+import Nav from "./components/Nav";
 import Temp from "./components/Temp";
 
-import { useMarkers } from "./hooks/useMarkers";
-
-const Container = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-`;
-
 function App() {
-  const { markers } = useMarkers("developing");
-
   return (
-    <BrowserRouter>
+    <>
       <CssBaseline />
-      <Container>
-        <Map markers={markers} />
-      </Container>
+      <MapContainer />
+      <Nav />
+      <Routes>
+        <Route path="/create" />
+        <Route path="/location" />
+        <Route path="/search" />
+        <Route path="/user" />
+      </Routes>
       <Temp />
-    </BrowserRouter>
+    </>
   );
 }
 
